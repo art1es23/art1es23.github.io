@@ -1,12 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>HELLO</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2.0"
+    />
+    <title>Landing</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <canvas></canvas>
+    <header id="header" class="header">
+      <nav role="navigation" class="main-navigation">
+        <a href="" class="main-navigation__logo">Qmpww</a>
+
+        <div class="menuToggle">
+          <input type="checkbox" />
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <ul id="menu-navigation" class="main-navigation__wrapper">
+            <li class="main-navigation__item">
+              <a href="#" class="main-navigation__link">Home</a>
+            </li>
+            <li class="main-navigation__item">
+              <a href="#about-us" class="main-navigation__link">About</a>
+            </li>
+            <li class="main-navigation__item">
+              <a href="#portfolio" class="main-navigation__link">Portfolio</a>
+            </li>
+            <li class="main-navigation__item">
+              <a href="#services" class="main-navigation__link">Services</a>
+            </li>
+            <li class="main-navigation__item">
+              <a href="" class="main-navigation__link">Team</a>
+            </li>
+            <li class="main-navigation__item">
+              <a href="" class="main-navigation__link">Blog</a>
+            </li>
+            <li class="main-navigation__item">
+              <a href="#footer" class="main-navigation__link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="header__wrapper">
+        <h1 class="header__title">.qmpwwstudio</h1>
+        <p class="header__description">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ex
+          ipsam natus nostrum odit sunt voluptatem. Accusantium, adipisci
+          labore? Quibusdam.
+        </p>
+        <a href="" class="header__link link">Read more</a>
+      </div>
+    </header>
+    <main class="main-section">
+      <section id="about-us" class="about panel" data-color="black">
+        <div class="about__wrapper">
+          <div class="about__picture">
+            <!--
+                                <img src="img/pexels-photo-2246249.jpeg" alt="">
+                -->
+          </div>
+          <div class="about__description">
+            <h2 class="title about__title">
+              This is <b class="nickname">qmpwwsd</b>
+            </h2>
+            <p class="about__context">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
+              cum deserunt dolores esse facere impedit minus nemo quod sequi
+              similique. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Consequuntur fuga inventore iusto quis recusandae ullam.
+            </p>
+            <a href="" class="about__link link">Read more</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="more-about panel">
+        <div class="more-about__wrapper">
+          <h2 class="more-about__title">
+            Details about <b class="nickname">qmpwwsd</b>
+          </h2>
+          <p class="more-about__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi,
+            laboriosam?
+          </p>
+
+          <div class="more-about__item"></div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="features panel">
+        <div class="features__wrapper">
+          <h2 class="features__title">Works</h2>
+          <div class="features__works works">
+            <a class="works__item work1">
+              <h3 class="works__title">Lorem ipsum dolor.</h3>
+              <p class="works__context">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Numquam, quo.
+              </p>
+            </a>
+            <a class="works__item work2">
+              <h3 class="works__title">Lorem ipsum dolor.</h3>
+              <p class="works__context">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Itaque, quis.
+              </p>
+            </a>
+            <a class="works__item work3">
+              <h3 class="works__title">Lorem ipsum dolor.</h3>
+              <p class="works__context">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque,
+                magni.
+              </p>
+            </a>
+            <a class="works__item work4">
+              <h3 class="works__title">Lorem ipsum dolor.</h3>
+              <p class="works__context">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Aperiam, doloribus.
+              </p>
+            </a>
+            <a class="works__item work5">
+              <h3 class="works__title">Lorem ipsum dolor.</h3>
+              <p class="works__context">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Maxime, natus?
+              </p>
+            </a>
+            <a class="works__item work6">
+              <h3 class="works__title">Lorem ipsum dolor.</h3>
+              <p class="works__context">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Exercitationem, itaque?
+              </p>
+            </a>
+            <a class="works__item work7">
+              <h3 class="works__title">Lorem ipsum dolor.</h3>
+              <p class="works__context">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Asperiores, molestias.
+              </p>
+            </a>
+            <a class="works__item work8">
+              <h3 class="works__title">Lorem ipsum dolor.</h3>
+              <p class="works__context">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi,
+                saepe!
+              </p>
+            </a>
+            <a class="works__item work9">
+              <h3 class="works__title">Lorem ipsum dolor.</h3>
+              <p class="works__context">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Maxime, recusandae.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services panel">
+        <div class="services__wrapper">
+          <h2 class="services__title">Services</h2>
+          <ul class="services__box box-group">
+            <li class="box-group__item">
+              <div class="box-group__icon"></div>
+              <h3 class="box-group__title">Design</h3>
+            </li>
+            <li class="box-group__item">
+              <div class="box-group__icon"></div>
+              <h3 class="box-group__title">Web-site</h3>
+            </li>
+            <li class="box-group__item">
+              <div class="box-group__icon"></div>
+              <h3 class="box-group__title">Responsive</h3>
+            </li>
+            <li class="box-group__item">
+              <div class="box-group__icon"></div>
+              <h3 class="box-group__title">Cross-browser</h3>
+            </li>
+            <li class="box-group__item">
+              <div class="box-group__icon"></div>
+              <h3 class="box-group__title">Animations</h3>
+            </li>
+            <li class="box-group__item">
+              <div class="box-group__icon"></div>
+              <h3 class="box-group__title">Lorem</h3>
+            </li>
+            <li class="box-group__item">
+              <div class="box-group__icon"></div>
+              <h3 class="box-group__title">Animations</h3>
+            </li>
+            <li class="box-group__item">
+              <div class="box-group__icon"></div>
+              <h3 class="box-group__title">Lorem</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer__wrapper">
+        <h2 class="footer__title">Contact with me</h2>
+        <ul class="contact__box social-menu">
+          <li class="social-menu__item">
+            <a href="" class="social-menu__link facebook"></a>
+          </li>
+          <li class="social-menu__item">
+            <a href="" class="social-menu__link telegram"></a>
+          </li>
+          <li class="social-menu__item">
+            <a href="" class="social-menu__link instagram"></a>
+          </li>
+          <li class="social-menu__item">
+            <a href="" class="social-menu__link linkedin"></a>
+          </li>
+        </ul>
+        <!--            <form action="" name="contact" class="footer-form">
+                        <h3 class="footer-form__title">Smth</h3>
+                        <input type="text" name="email" placeholder="Enter your email:">
+                        <input type="number" name="phone" placeholder="Enter your phone number:">
+                        <button type="submit">Submit</button>
+                    </form>-->
+
+        <div class="footerLince"></div>
+      </div>
+    </footer>
+
+    <a class="arrowUp" href="#">^</a>
+
+    <script src="js/common.js"></script>
+    <!--group__item
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+-->
+    <script src="js/canvas.js"></script>
+    <!--
+<script src="js/slider.js"></script>
+<script src="js/sliderComments.js"></script>-->
+
+    <!--
+<script>
+    $(window).scroll(function() {
+
+        // selectors
+        let $window = $(window),
+            $body = $('body'),
+            $panel = $('.panel');
+
+        // Change 33% earlier than scroll position so colour is there when you arrive.
+        let scroll = $window.scrollTop() + ($window.height() / 3);
+
+        $panel.each(function () {
+            let $this = $(this);
+
+            // if position is within range of this panel.
+            // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+            // Remember we set the scroll to 33% earlier in scroll let.
+            if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+
+                // Remove all classes on body with color-
+                $body.removeClass(function (index, css) {
+                    return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
+                });
+
+                // Add class of currently active div
+                $body.addClass('color-' + $(this).data('color'));
+            }
+        });
+
+    }).scroll();
+</script>
+-->
+  </body>
 </html>
