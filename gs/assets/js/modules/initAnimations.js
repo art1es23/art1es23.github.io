@@ -229,8 +229,8 @@ export default function t() {
         x: 0,
         scrollTrigger: {
           trigger: ".about-us-wrapper",
-          start: "top-=300 50%",
-          end: "top-=100 20%",
+          start: window.innerWidth > 800 ? "top-=300 50%" : "top-=100 70%",
+          end: window.innerWidth > 800 ? "top-=100 20%" : "top 20%",
           scrub: !0,
           once: true,
         },
@@ -248,8 +248,8 @@ export default function t() {
         // stagger: 0.35,
         scrollTrigger: {
           trigger: ".about-us-wrapper",
-          start: "top-=300 30%",
-          end: "top 10%",
+          start: window.innerWidth > 800 ? "top-=300 30%" : "top 40%",
+          end: window.innerWidth > 800 ? "top-=100 20%" : "top 10%",
           scrub: !0,
           once: true,
         },
@@ -260,9 +260,10 @@ export default function t() {
       { opacity: 0, x: 50 },
       {
         scrollTrigger: {
-          trigger: ".about-us-wrapper",
-          start: "top-=250 30%",
-          end: "top 10%",
+          trigger:
+            window.innerWidth > 800 ? ".about-us-wrapper" : ".about-us-info",
+          start: window.innerWidth > 800 ? "top-=300 30%" : "top 40%",
+          end: window.innerWidth > 800 ? "top-=100 20%" : "top+=100 10%",
           scrub: !0,
           once: true,
         },
@@ -283,9 +284,10 @@ export default function t() {
         xPercent: 0,
         // "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         scrollTrigger: {
-          trigger: ".about-us-wrapper",
-          start: "top-=100 30%",
-          end: "top+=300 10%",
+          trigger:
+            window.innerWidth > 800 ? ".about-us-wrapper" : ".about-us-quote",
+          start: window.innerWidth > 800 ? "top-=100 30%" : "top 30%",
+          end: window.innerWidth > 800 ? "top+=300 10%" : "bottom 40%",
           scrub: !0,
           once: true,
         },
@@ -298,6 +300,14 @@ export default function t() {
       },
       {
         opacity: 1,
+        scrollTrigger: {
+          trigger:
+            window.innerWidth > 800 ? ".about-us-wrapper" : ".about-us-quote",
+          start: window.innerWidth > 800 ? "top-=100 30%" : "top 30%",
+          end: window.innerWidth > 800 ? "top+=300 10%" : "bottom 40%",
+          scrub: !0,
+          once: true,
+        },
       }
     )
     .fromTo(
@@ -307,9 +317,12 @@ export default function t() {
         opacity: 1,
         yPercent: 0,
         scrollTrigger: {
-          trigger: ".about-us-objective__title",
-          start: "top-=100 30%",
-          end: "center 10%",
+          trigger:
+            window.innerWidth > 800
+              ? ".about-us-objective__title"
+              : ".about-us-quote",
+          start: window.innerWidth > 800 ? "top-=100 30%" : "top+=100 30%",
+          end: window.innerWidth > 800 ? "center 10%" : "bottom+=100 40%",
           scrub: !0,
           once: true,
         },
@@ -325,9 +338,10 @@ export default function t() {
         opacity: 1,
         x: 0,
         scrollTrigger: {
-          trigger: ".contact-us-info",
-          start: "top-=325 85%",
-          end: "top+=200 10%",
+          trigger:
+            window.innerWidth > 800 ? ".contact-us-info" : ".about-us-img",
+          start: window.innerWidth > 800 ? "top-=325 85%" : "center 70%",
+          end: window.innerWidth > 800 ? "top+=200 10%" : "center+=200 20%",
           scrub: !0,
           once: true,
         },
@@ -335,14 +349,18 @@ export default function t() {
     )
     .fromTo(
       ".contact-us-info__description",
-      { opacity: 0, xPercent: -10 },
+      {
+        opacity: 0,
+        xPercent: window.innerWidth > 800 ? -10 : -50,
+      },
       {
         opacity: 1,
         xPercent: 0,
         scrollTrigger: {
-          trigger: ".contact-us-info",
-          start: "top-=325 85%",
-          end: "top+=200 10%",
+          trigger:
+            window.innerWidth > 800 ? ".contact-us-info" : ".about-us-img",
+          start: window.innerWidth > 800 ? "top-=325 85%" : "center 70%",
+          end: window.innerWidth > 800 ? "top+=200 10%" : "center+=200 20%",
           scrub: !0,
           once: true,
         },
@@ -358,9 +376,10 @@ export default function t() {
         opacity: 1,
         x: 0,
         scrollTrigger: {
-          trigger: ".contact-us-info",
-          start: "top-=325 85%",
-          end: "top+=200 10%",
+          trigger:
+            window.innerWidth > 800 ? ".contact-us-info" : ".about-us-img",
+          start: window.innerWidth > 800 ? "top-=325 85%" : "center 70%",
+          end: window.innerWidth > 800 ? "top+=200 10%" : "center+=200 20%",
           scrub: !0,
           once: true,
         },
@@ -376,9 +395,10 @@ export default function t() {
         opacity: 1,
         // "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         scrollTrigger: {
-          trigger: ".contact-us-info",
-          start: "top-=325 85%",
-          end: "top+=200 10%",
+          trigger:
+            window.innerWidth > 800 ? ".contact-us-info" : ".about-us-img",
+          start: window.innerWidth > 800 ? "top-=325 85%" : "center 70%",
+          end: window.innerWidth > 800 ? "top+=200 10%" : "center+=200 20%",
           scrub: !0,
           once: true,
         },
