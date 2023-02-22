@@ -1,3 +1,33 @@
+const _getGapBetweenSlides = (slider) =>
+  window.innerWidth <= 800
+    ? 0
+    : window.innerWidth <= 900
+    ? 135
+    : window.innerWidth <= 1080
+    ? 165
+    : window.innerWidth <= 1366
+    ? 90
+    : window.innerWidth <= 1600
+    ? 125
+    : 150;
+
+const _getEffect = (slider) =>
+  window.innerWidth <= 800 ? "slide" : "carousel";
+const _getCountOfSlides = (slider) =>
+  window.innerWidth <= 800 ? 1.85 : "auto";
+
+function initBookReaderSlider() {
+  if (window.innerWidth <= 800) {
+    actionWithSection(
+      ".slider-book-reader",
+      ".swiper-wrapper",
+      ".swiper-slide",
+      "add"
+    );
+    createSlider(".slider-book-reader", true, 0, true, 1.85);
+  }
+}
+
 const createSlider = (
   sliderClassName,
   loopState = true,
@@ -91,27 +121,10 @@ const createSlider = (
         swiper.params.spaceBetween = _getGapBetweenSlides();
         if (swiper.el.classList.contains("slider-bitalo")) {
           swiper.params.effect = _getEffect();
-          console.log(swiper.params.effect);
         }
         swiper.init();
 
-        function _getEffect(slider) {
-          return window.innerWidth <= 800 ? "slide" : "carousel";
-        }
-
-        function _getGapBetweenSlides(slider) {
-          return window.innerWidth <= 800
-            ? 0
-            : window.innerWidth <= 900
-            ? 135
-            : window.innerWidth <= 1080
-            ? 165
-            : window.innerWidth <= 1366
-            ? 105
-            : window.innerWidth <= 1600
-            ? 125
-            : 150;
-        }
+        _getGapBetweenSlides(slider);
       },
       setTransition(swiper, t) {
         if ("carousel" === swiper.params.effect)
@@ -150,46 +163,11 @@ export default function initSliders() {
     }
   });
 
-  function _getGapBetweenSlides(slider) {
-    return window.innerWidth <= 800
-      ? 0
-      : window.innerWidth <= 900
-      ? 135
-      : window.innerWidth <= 1080
-      ? 165
-      : window.innerWidth <= 1366
-      ? 90
-      : window.innerWidth <= 1600
-      ? 125
-      : 150;
-  }
+  _getGapBetweenSlides();
 
-  function _getEffect(slider) {
-    return window.innerWidth <= 800 ? "slide" : "carousel";
-  }
-  function _getCountOfSlides(slider) {
-    return window.innerWidth <= 800 ? 1.85 : "auto";
-  }
-  if (window.innerWidth <= 800) {
-    actionWithSection(
-      ".slider-book-reader",
-      ".swiper-wrapper",
-      ".swiper-slide",
-      "add"
-    );
-    createSlider(".slider-book-reader", true, 0, true, 1.85);
-  }
-
+  initBookReaderSlider();
   window.addEventListener("resize", (e) => {
-    if (window.innerWidth <= 800) {
-      actionWithSection(
-        ".slider-book-reader",
-        ".swiper-wrapper",
-        ".swiper-slide",
-        "add"
-      );
-      createSlider(".slider-book-reader", true, 0, true, 1.85);
-    }
+    initBookReaderSlider();
   });
 }
 
