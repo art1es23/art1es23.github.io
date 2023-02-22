@@ -369,6 +369,10 @@
 }
 
 @media screen and (max-width: 800px) {
+  section,
+  .hero {
+    min-height: initial;
+  }
   /* Container */
   .container {
     max-width: 85%;
@@ -425,6 +429,11 @@
   }
   .service-legend__item--larger {
     font-size: max(4.5vw, 38px);
+  }
+  /* Projects */
+
+  .project-wrapper {
+    padding: max(min(7.5vh, 10vw), 50px) 0;
   }
 
   .project__title {
@@ -837,7 +846,7 @@
   }
 
   .about-us-wrapper {
-    padding: max(10vh, 30px) 0 max(5vh, 25px);
+    padding: max(20vw, 30px) 0 max(10vw, 30px);
   }
 }
 
