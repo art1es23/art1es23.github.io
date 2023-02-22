@@ -139,10 +139,6 @@ const createSlider = (
       },
     },
   });
-
-  // if (sliderClassName === "slider-book-reader" && window.innerWidth > 800) {
-  //   swiper.destroy();
-  // }
 };
 
 export default function initSliders() {
@@ -162,8 +158,6 @@ export default function initSliders() {
       createSlider(slider);
     }
   });
-
-  _getGapBetweenSlides();
 
   initBookReaderSlider();
   window.addEventListener("resize", (e) => {

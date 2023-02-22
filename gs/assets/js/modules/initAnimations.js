@@ -8,8 +8,10 @@ export default function t() {
         duration: 2,
         scrollTrigger: {
           trigger: ".hero",
-          start: "center 30%",
-          end: "bottom 10%",
+          start: window.innerWidth > 800 ? "center 30%" : "top 10%",
+          end: window.innerWidth > 800 ? "bottom 10%" : "bottom 10%",
+          // start: "center 30%",
+          // end: "bottom 10%",
           scrub: !0,
           once: true,
         },
@@ -35,7 +37,7 @@ export default function t() {
           scrollTrigger: {
             trigger: `${t} .project-wrapper`,
             start:
-              window.innerWidth <= 800 ? "top-=200 60%" : "top-=200 center",
+              window.innerWidth <= 800 ? "top-=200 60%" : "top-=300 center",
             end: window.innerWidth <= 800 ? "top 30%" : "top 10%",
             scrub: !0,
             once: true,
@@ -116,6 +118,7 @@ export default function t() {
         }
       );
   }
+
   t
     .fromTo(
       ".hero__title",
@@ -129,17 +132,19 @@ export default function t() {
       ".header",
       { opacity: 0, yPercent: -100 },
       { opacity: 1, yPercent: 0 },
-      "-=0.5"
+      "-=1"
     )
     .fromTo(
       ".hero__button",
       { opacity: 0, yPercent: 50 },
-      { opacity: 1, yPercent: 0 }
+      { opacity: 1, yPercent: 0 },
+      "-=0.25"
     )
     .fromTo(
       ".hero .social-menu__link",
       { opacity: 0, yPercent: 20 },
-      { opacity: 1, yPercent: 0, delay: 0.25, duration: 0.2, stagger: 0.05 }
+      { opacity: 1, yPercent: 0, delay: 0.25, duration: 0.2, stagger: 0.05 },
+      "-=0.15"
     ),
     $.fromTo(".services__title", { opacity: 0, x: -50 }, { opacity: 1, x: 0 })
       .fromTo(
@@ -194,9 +199,11 @@ export default function t() {
           opacity: 1,
           xPercent: 0,
           scrollTrigger: {
-            trigger: ".projects",
-            start: "top-=150 center",
-            end: "top-=150 10%",
+            trigger: window.innerWidth > 800 ? ".projects" : ".tab-navigation",
+            start: "top-=250 center",
+            end: "top-=250 10%",
+            // start: window.innerWidth > 800 ? "top-=150 center" : "top-=250 10%",
+            // end: window.innerWidth > 800 ? "top-=150 10%" : "top-=150 40%",
             scrub: !0,
             once: true,
           },
@@ -212,9 +219,6 @@ export default function t() {
 
   projects.forEach((item) => e(item));
 
-  // gsap.set("#arrowSvg", { transformOrigin: "center" });
-  // let c = [0, 0.115, 0.25];
-
   gsap
     .timeline({ defaults: { ease: "power4.inOut", duration: 2 } })
     .fromTo(
@@ -225,8 +229,8 @@ export default function t() {
         x: 0,
         scrollTrigger: {
           trigger: ".about-us-wrapper",
-          start: "top-=300 30%",
-          end: "top-=100 10%",
+          start: "top-=300 50%",
+          end: "top-=100 20%",
           scrub: !0,
           once: true,
         },
@@ -296,77 +300,6 @@ export default function t() {
         opacity: 1,
       }
     )
-    // .to(
-    //   "#arrowSvg",
-    //   {
-    //     motionPath: {
-    //       path: "#path1",
-    //       align: "#path1",
-    //       alignOrigin: [0.5, 0.5],
-    //     },
-    //     opacity: 0,
-    //     onComplete: function t() {
-    //       gsap.to(".last", { scale: 1, duration: 1, repeat: 1 });
-    //     },
-    //     ease: "power1.inOut",
-    //     scrollTrigger: {
-    //       trigger: ".about-us-wrapper",
-    //       start: "top-=100 30%",
-    //       end: "top+=300 10%",
-
-    //       scrub: !0,
-    //       once: true,
-    //     },
-    //   },
-    //   0
-    // )
-    // .from(
-    //   ".stop",
-    //   {
-    //     autoAlpha: 0,
-    //     duration: 0.5,
-    //     stagger: function (t) {
-    //       return c[t];
-    //     },
-    //     onComplete: function t() {
-    //       gsap.to(".last", { scale: 1, duration: 1, repeat: 1 });
-    //     },
-    //     ease: "power1.inOut",
-    //     scrollTrigger: {
-    //       trigger: ".about-us-wrapper",
-    //       start: "top-=100 30%",
-    //       end: "top+=300 10%",
-
-    //       scrub: !0,
-    //       once: true,
-    //     },
-    //   },
-    //   0
-    // )
-    // .from(
-    //   ".stopText",
-    //   {
-    //     autoAlpha: 0,
-    //     x: "-=100",
-    //     duration: 0.5,
-    //     stagger: function (t) {
-    //       return c[t];
-    //     },
-    //     onComplete: function t() {
-    //       gsap.to(".last", { scale: 1, duration: 1, repeat: 1 });
-    //     },
-    //     ease: "power1.inOut",
-    //     scrollTrigger: {
-    //       trigger: ".about-us-wrapper",
-    //       start: "top-=100 30%",
-    //       end: "top+=300 10%",
-
-    //       scrub: !0,
-    //       once: true,
-    //     },
-    //   },
-    //   0
-    // )
     .fromTo(
       ".about-us-img",
       { opacity: 0, yPercent: 35 },
@@ -433,25 +366,6 @@ export default function t() {
         },
       }
     )
-    // .fromTo(
-    //   ".contacts-list__item",
-    //   {
-    //     opacity: 0,
-    //     y: 50,
-    //   },
-    //   {
-    //     opacity: 1,
-    //     y: 0,
-    //     stagger: 1,
-    //     scrollTrigger: {
-    //       trigger: ".contact-us-info",
-    //       start: "top+=100 center",
-    //       end: "center 10%",
-    //       scrub: !0,
-    // once: true,
-    //     },
-    //   }
-    // )
     .fromTo(
       ".contact-us-form",
       {
