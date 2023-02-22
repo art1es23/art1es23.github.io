@@ -84,7 +84,7 @@
   .header.header--active {
     align-items: flex-start;
     /* min-height: 57.5vh; */
-    background-color: var(--base-color);
+    /* background-color: var(--base-color); */
     /* transition-delay: 0.25s; */
     transition: all 0.3s ease-in-out;
   }
@@ -105,10 +105,10 @@
     position: absolute;
     top: 7.5rem;
     left: 50%;
-    transform: translate(100%, 0%);
+    transform: translate(-50%, -100%);
     opacity: 0;
     visibility: hidden;
-    background-color: rgb(0 0 0 / 100%);
+    background-color: rgb(0 0 0 / 80%);
     transition: all 0.5s ease-in;
   }
 
