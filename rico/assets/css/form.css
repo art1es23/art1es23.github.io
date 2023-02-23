@@ -16,7 +16,7 @@ select {
   --input-border-radius: 5px;
 
   width: 100%;
-  /* font-family: "Roboto", sans-serif; */
+  font-family: "Bebes Neue", sans-serif;
 
   outline: none;
   color: var(--input-base-color);
@@ -40,7 +40,6 @@ textarea {
 
 textarea {
   resize: none;
-  width: 100%;
 }
 
 select,
@@ -64,7 +63,7 @@ input[type="submit"].button--full {
 
 /* Form */
 .form {
-  --form-padding: 10vh 5vw;
+  --form-padding: 10vh 5vw 0;
   /* --form-background-color: #fff; */
   --form-min-width: 37.5vw;
   --form-max-width: 100%;

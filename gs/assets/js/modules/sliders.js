@@ -76,6 +76,7 @@ const createSlider = (
     centeredSlides,
     grabCursor: true,
     observer: true,
+    observeParents: true,
 
     on: {
       beforeInit(swiper) {

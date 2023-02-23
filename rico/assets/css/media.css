@@ -105,4 +105,18 @@
     font-size: 40px;
     font-family: "Bebas Neue";
   }
+
+  /* Product List */
+  section {
+    min-height: auto;
+  }
+
+  .product {
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .advantages-list {
+    padding: initial;
+  }
 }
