@@ -285,9 +285,9 @@ export default function t() {
         // "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         scrollTrigger: {
           trigger:
-            window.innerWidth > 800 ? ".about-us-wrapper" : ".about-us-quote",
-          start: window.innerWidth > 800 ? "top-=100 30%" : "top 30%",
-          end: window.innerWidth > 800 ? "top+=300 10%" : "bottom 40%",
+            window.innerWidth > 800 ? ".about-us-wrapper" : ".about-us-info",
+          start: window.innerWidth > 800 ? "top-=100 30%" : "bottom-=100 40%",
+          end: window.innerWidth > 800 ? "top+=300 10%" : "bottom+=100 10%",
           scrub: !0,
           once: true,
         },
@@ -302,9 +302,9 @@ export default function t() {
         opacity: 1,
         scrollTrigger: {
           trigger:
-            window.innerWidth > 800 ? ".about-us-wrapper" : ".about-us-quote",
-          start: window.innerWidth > 800 ? "top-=100 30%" : "top 30%",
-          end: window.innerWidth > 800 ? "top+=300 10%" : "bottom 40%",
+            window.innerWidth > 800 ? ".about-us-wrapper" : ".about-us-info",
+          start: window.innerWidth > 800 ? "top-=100 30%" : "bottom-=100 40%",
+          end: window.innerWidth > 800 ? "top+=300 10%" : "bottom+=100 10%",
           scrub: !0,
           once: true,
         },
@@ -321,8 +321,8 @@ export default function t() {
             window.innerWidth > 800
               ? ".about-us-objective__title"
               : ".about-us-quote",
-          start: window.innerWidth > 800 ? "top-=100 30%" : "top+=100 30%",
-          end: window.innerWidth > 800 ? "center 10%" : "bottom+=100 40%",
+          start: window.innerWidth > 800 ? "top-=100 30%" : "bottom-=100 70%",
+          end: window.innerWidth > 800 ? "center 10%" : "bottom+=100 10%",
           scrub: !0,
           once: true,
         },
@@ -339,9 +339,9 @@ export default function t() {
         x: 0,
         scrollTrigger: {
           trigger:
-            window.innerWidth > 800 ? ".contact-us-info" : ".about-us-img",
-          start: window.innerWidth > 800 ? "top-=325 85%" : "center 70%",
-          end: window.innerWidth > 800 ? "top+=200 10%" : "center+=200 20%",
+            window.innerWidth > 800 ? ".contact-us-info" : ".about-us-quote",
+          start: window.innerWidth > 800 ? "top-=325 85%" : "bottom 40%",
+          end: window.innerWidth > 800 ? "top+=200 10%" : "bottom 10%",
           scrub: !0,
           once: true,
         },
@@ -358,9 +358,9 @@ export default function t() {
         xPercent: 0,
         scrollTrigger: {
           trigger:
-            window.innerWidth > 800 ? ".contact-us-info" : ".about-us-img",
-          start: window.innerWidth > 800 ? "top-=325 85%" : "center 70%",
-          end: window.innerWidth > 800 ? "top+=200 10%" : "center+=200 20%",
+            window.innerWidth > 800 ? ".contact-us-info" : ".about-us-quote",
+          start: window.innerWidth > 800 ? "top-=325 85%" : "bottom 40%",
+          end: window.innerWidth > 800 ? "top+=200 10%" : "bottom 10%",
           scrub: !0,
           once: true,
         },
@@ -377,9 +377,11 @@ export default function t() {
         x: 0,
         scrollTrigger: {
           trigger:
-            window.innerWidth > 800 ? ".contact-us-info" : ".about-us-img",
-          start: window.innerWidth > 800 ? "top-=325 85%" : "center 70%",
-          end: window.innerWidth > 800 ? "top+=200 10%" : "center+=200 20%",
+            window.innerWidth > 800
+              ? ".contact-us-info"
+              : ".about-us-objective__title",
+          start: window.innerWidth > 800 ? "top-=325 85%" : "bottom 60%",
+          end: window.innerWidth > 800 ? "top+=200 10%" : "bottom 10%",
           scrub: !0,
           once: true,
         },
@@ -395,10 +397,9 @@ export default function t() {
         opacity: 1,
         // "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         scrollTrigger: {
-          trigger:
-            window.innerWidth > 800 ? ".contact-us-info" : ".about-us-img",
-          start: window.innerWidth > 800 ? "top-=325 85%" : "center 70%",
-          end: window.innerWidth > 800 ? "top+=200 10%" : "center+=200 20%",
+          trigger: window.innerWidth > 800 ? ".contact-us-info" : ".footer",
+          start: window.innerWidth > 800 ? "top-=325 85%" : "top 50%",
+          end: window.innerWidth > 800 ? "top+=200 10%" : "top top",
           scrub: !0,
           once: true,
         },
@@ -406,14 +407,19 @@ export default function t() {
     )
     .fromTo(
       ".contact-us-form__item--left",
-      { x: -100, opacity: 0 },
+      {
+        x: window.innerWidth > 800 ? -100 : 0,
+        y: window.innerWidth > 800 ? 0 : 100,
+        opacity: 0,
+      },
       {
         x: 0,
+        y: 0,
         opacity: 1,
         scrollTrigger: {
           trigger: ".contact-us-info",
           start: "top center",
-          end: "top+=200 10%",
+          end: "top+=100 10%",
           scrub: !0,
           once: true,
         },
@@ -421,14 +427,19 @@ export default function t() {
     )
     .fromTo(
       ".contact-us-form__item--right",
-      { x: 100, opacity: 0 },
+      {
+        x: window.innerWidth > 800 ? 100 : 0,
+        y: window.innerWidth > 800 ? 0 : 100,
+        opacity: 0,
+      },
       {
         x: 0,
+        y: 0,
         opacity: 1,
         scrollTrigger: {
           trigger: ".contact-us-info",
           start: "top center",
-          end: "top+=200 10%",
+          end: "top+=100 10%",
           scrub: !0,
           once: true,
         },
@@ -443,7 +454,7 @@ export default function t() {
         scrollTrigger: {
           trigger: ".contacts-list",
           start: "bottom 20%",
-          end: "bottom+=300 10%",
+          end: "bottom+=100 10%",
           scrub: !0,
           once: true,
         },
