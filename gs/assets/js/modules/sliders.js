@@ -4,12 +4,12 @@ const _getGapBetweenSlides = (slider) =>
     : window.innerWidth <= 900
     ? 135
     : window.innerWidth <= 1080
-    ? 165
+    ? 150
     : window.innerWidth <= 1366
-    ? 90
+    ? 95
     : window.innerWidth <= 1600
-    ? 125
-    : 150;
+    ? 120
+    : 140;
 
 const _getEffect = (slider) =>
   window.innerWidth <= 800 ? "slide" : "carousel";
@@ -56,13 +56,6 @@ const createSlider = (
           enabled: false,
           hide: true,
         },
-        coverflowEffect: {
-          rotate: 0,
-          stretch: 10,
-          depth: 20,
-          modifier: 1.5,
-          slideShadows: false,
-        },
       },
     },
 
@@ -106,7 +99,7 @@ const createSlider = (
           let i = 1;
           o > 1 && (i = 1 * (o - 1) + 1);
           const n = a.querySelectorAll(".swiper-carousel-animate-opacity"),
-            l = r * i * 57.5 + "%",
+            l = r * i * 55 + "%",
             c = 1 - 0.2 * o,
             f = s - Math.abs(Math.round(r));
           (a.style.transform = `translateX(${l}) scale(${c})`),
@@ -120,11 +113,30 @@ const createSlider = (
       resize(swiper) {
         swiper.params.spaceBetween = _getGapBetweenSlides();
         if (swiper.el.classList.contains("slider-bitalo")) {
-          swiper.params.effect = _getEffect();
+          if (window.innerWidth <= 800) {
+            console.log("true");
+            swiper.init(".slider-bitalo");
+            swiper.params.effect = "slide";
+            console.log(swiper.params.effect);
+          } else {
+            console.log("flase");
+            swiper.init(".slider-bitalo");
+            swiper.params.effect = "carousel";
+            console.log(swiper.params);
+          }
         }
         swiper.init();
 
         _getGapBetweenSlides(slider);
+
+        if (swiper.el.classList.contains("slider-book-reader")) {
+          console.log(swiper);
+          if (window.innerWidth <= 800) {
+            swiper.init();
+          } else {
+            swiper.destroy();
+          }
+        }
       },
       setTransition(swiper, t) {
         if ("carousel" === swiper.params.effect)
@@ -162,6 +174,18 @@ export default function initSliders() {
   initBookReaderSlider();
   window.addEventListener("resize", (e) => {
     initBookReaderSlider();
+    // _sliders.forEach((slider) => {
+    //   if (slider === ".slider-bitalo") {
+    //     createSlider(
+    //       slider,
+    //       true,
+    //       _getGapBetweenSlides(),
+    //       true,
+    //       _getCountOfSlides(),
+    //       _getEffect()
+    //     );
+    //   }
+    // });
   });
 }
 
@@ -181,9 +205,12 @@ function actionWithSection(sliderWrapper, sliderInner, sliderSlide, state) {
     }
     case "remove": {
       slider.classList.remove("swiper");
+      console.log(inner);
       inner.classList.remove("swiper-wrapper");
+      inner.setAttribute("style", "");
       slides.forEach((slide) => {
         slide.classList.remove("swiper-slide");
+        slide.style.width = "25%";
       });
       break;
     }
