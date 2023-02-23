@@ -466,7 +466,7 @@ export default function t() {
         start: "top center",
         end: "center 100",
         scrub: !0,
-        once: true,
+        // once: true,
       },
     }
   );
