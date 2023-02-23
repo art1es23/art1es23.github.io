@@ -28,6 +28,19 @@ function initBookReaderSlider() {
   }
 }
 
+function initBitaloSlider(slider) {
+  if (slider === ".slider-bitalo") {
+    createSlider(
+      slider,
+      true,
+      _getGapBetweenSlides(),
+      true,
+      _getCountOfSlides(),
+      _getEffect()
+    );
+  }
+}
+
 const createSlider = (
   sliderClassName,
   loopState = true,
@@ -128,6 +141,10 @@ const createSlider = (
         }
         swiper.init();
 
+        if (window.innerWidth <= 800) {
+          swiper.init();
+        }
+
         _getGapBetweenSlides(slider);
 
         if (swiper.el.classList.contains("slider-book-reader")) {
@@ -159,14 +176,7 @@ export default function initSliders() {
 
   _sliders.forEach((slider) => {
     if (slider === ".slider-bitalo") {
-      createSlider(
-        slider,
-        true,
-        _getGapBetweenSlides(),
-        true,
-        _getCountOfSlides(),
-        _getEffect()
-      );
+      initBitaloSlider(slider);
     } else {
       createSlider(slider);
     }
@@ -175,18 +185,9 @@ export default function initSliders() {
   initBookReaderSlider();
   window.addEventListener("resize", (e) => {
     initBookReaderSlider();
-    // _sliders.forEach((slider) => {
-    //   if (slider === ".slider-bitalo") {
-    //     createSlider(
-    //       slider,
-    //       true,
-    //       _getGapBetweenSlides(),
-    //       true,
-    //       _getCountOfSlides(),
-    //       _getEffect()
-    //     );
-    //   }
-    // });
+    _sliders.forEach((slider) => {
+      initBitaloSlider(slider);
+    });
   });
 }
 

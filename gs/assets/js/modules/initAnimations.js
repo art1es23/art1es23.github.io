@@ -341,7 +341,7 @@ export default function t() {
           trigger:
             window.innerWidth > 800 ? ".contact-us-info" : ".about-us-quote",
           start: window.innerWidth > 800 ? "top-=325 85%" : "bottom 40%",
-          end: window.innerWidth > 800 ? "top+=200 10%" : "bottom 10%",
+          end: window.innerWidth > 800 ? "top 10%" : "bottom 10%",
           scrub: !0,
           once: true,
         },
@@ -360,7 +360,7 @@ export default function t() {
           trigger:
             window.innerWidth > 800 ? ".contact-us-info" : ".about-us-quote",
           start: window.innerWidth > 800 ? "top-=325 85%" : "bottom 40%",
-          end: window.innerWidth > 800 ? "top+=200 10%" : "bottom 10%",
+          end: window.innerWidth > 800 ? "top 10%" : "bottom 10%",
           scrub: !0,
           once: true,
         },
@@ -381,7 +381,7 @@ export default function t() {
               ? ".contact-us-info"
               : ".about-us-objective__title",
           start: window.innerWidth > 800 ? "top-=325 85%" : "bottom 60%",
-          end: window.innerWidth > 800 ? "top+=200 10%" : "bottom 10%",
+          end: window.innerWidth > 800 ? "top 10%" : "bottom 10%",
           scrub: !0,
           once: true,
         },
@@ -399,7 +399,7 @@ export default function t() {
         scrollTrigger: {
           trigger: window.innerWidth > 800 ? ".contact-us-info" : ".footer",
           start: window.innerWidth > 800 ? "top-=325 85%" : "top 50%",
-          end: window.innerWidth > 800 ? "top+=200 10%" : "top top",
+          end: window.innerWidth > 800 ? "top 10%" : "top top",
           scrub: !0,
           once: true,
         },
