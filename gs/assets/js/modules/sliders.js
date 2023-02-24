@@ -84,7 +84,7 @@ const createSlider = (
         scrollbar: {
           el: ".swiper-scrollbar",
           enabled: false,
-          hide: true,
+          // hide: true,
         },
       },
     },
@@ -100,6 +100,7 @@ const createSlider = (
     scrollbar: {
       el: ".swiper-scrollbar",
       dragSize: 25,
+      enabled: true,
     },
     spaceBetween,
     slidesPerView,
@@ -107,6 +108,13 @@ const createSlider = (
     grabCursor: true,
     observer: true,
     observeParents: true,
+    paralax: {
+      enabled: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      enabled: false,
+    },
 
     on: {
       beforeInit(swiper) {

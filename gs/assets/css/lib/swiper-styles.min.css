@@ -219,7 +219,7 @@
 .swiper-pagination.swiper-pagination-disabled,
 .swiper-scrollbar-disabled > .swiper-scrollbar,
 .swiper-scrollbar.swiper-scrollbar-disabled {
-  display: none !important;
+  /* display: none !important; */
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
