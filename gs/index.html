@@ -63,6 +63,15 @@
   </head>
 
   <body>
+    <div class="preloader show">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
     <header class="header" id="header">
       <div class="header-wrapper container">
         <a href="#" class="logo">
@@ -1444,13 +1453,13 @@
                 for="fullName"
                 class="contact-us-form__item contact-us-form__item--half contact-us-form__item--left"
                 >Full name *
-                <input type="text" name="fullName" id="fullName" />
+                <input type="text" name="fullName" id="fullName" required />
               </label>
               <label
                 for="email"
                 class="contact-us-form__item contact-us-form__item--half contact-us-form__item--right"
                 >Business e-mail *
-                <input type="email" name="email" id="email" />
+                <input type="email" name="email" id="email" required />
               </label>
               <label
                 for="phone"
@@ -1461,6 +1470,7 @@
                   pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                   name="phone"
                   id="phone"
+                  required
                 />
               </label>
 
@@ -1538,13 +1548,14 @@
                 id="message"
                 cols="30"
                 rows="10"
+                required
               ></textarea>
             </label>
 
             <input
               name="subject"
               type="hidden"
-              value="Заявка с сайта gs.unrealbug.net"
+              value="Заявка с сайта Great Solution"
             />
 
             <div
@@ -1617,6 +1628,8 @@
           </ul>
         </div>
       </div>
+
+      <div class="status-message"></div>
     </footer>
 
     <div class="slideshow-modal popin popin--closed">

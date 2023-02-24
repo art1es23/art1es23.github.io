@@ -6,6 +6,10 @@ import initModalSliders from "./modules/modalSliders.js";
 import submitForm from "./modules/submitForm.js";
 
 window.addEventListener("load", (event) => {
+  "use strict";
+
+  document.querySelector(".preloader").classList.remove("show");
+
   document.querySelector(".copyright-year").innerHTML =
     new Date().getFullYear();
 

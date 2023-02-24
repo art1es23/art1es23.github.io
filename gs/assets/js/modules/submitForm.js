@@ -6,9 +6,14 @@ export default function submitForm(formID) {
 
   const textareas = document.querySelectorAll("textarea");
 
+  const messageContent = {
+    loading: `It's loading. Please wait..`,
+    success: `Thank you! We contact you later.`,
+    failure: `Sorry.. Please try again.`,
+  };
+
   const clearInputs = () => {
     inputs.forEach((input) => {
-      console.log(input);
       input.type === "checkbox" ? (input.checked = false) : (input.value = "");
     });
     textareas.forEach((input) => (input.value = ""));
@@ -31,8 +36,27 @@ export default function submitForm(formID) {
     }
   });
 
+  const postData = async (url, data) => {
+    let res = await fetch(url, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: "300994675",
+        parse_mode: "html",
+        text: data,
+      }),
+    });
+
+    return await res.text();
+  };
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
+
+    const URL =
+      "https://api.telegram.org/bot6087831368:AAFmLrIXYVNn0qSRIAKvq6mCMwPcjX9peds/sendMessage";
 
     const formData = new FormData(event.currentTarget);
 
@@ -44,27 +68,22 @@ export default function submitForm(formID) {
 
     const txt = `Full Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nChoose services: ${chooseServices}\n${message}\n`;
 
-    fetch(
-      "https://api.telegram.org/bot6087831368:AAFmLrIXYVNn0qSRIAKvq6mCMwPcjX9peds/sendMessage",
-      {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          chat_id: "300994675",
-          parse_mode: "html",
-          text: txt,
-        }),
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        clearInputs();
+    const messageEl = document.querySelector(".status-message");
+
+    messageEl.textContent = messageContent.loading;
+    messageEl.classList.add("visible");
+
+    postData(URL, txt)
+      .then((response) => {
+        messageEl.textContent = messageContent.success;
+        // response.json();
       })
-      .catch((error) => console.error(error));
+      .catch((error) => (messageEl.textContent = messageContent.failure))
+      .finally(() => {
+        setTimeout(() => {
+          messageEl.classList.remove("visible");
+        }, 4000);
+        clearInputs();
+      });
   });
 }
-
-// export { submitForm };

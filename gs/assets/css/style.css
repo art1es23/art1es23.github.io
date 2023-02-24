@@ -1854,6 +1854,33 @@ label input:checked + .input-checked:after {
   color: var(--collateral-color);
 }
 
+/* Status Message */
+.status-message {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: var(--main-color);
+  background-color: var(--collateral-color);
+  z-index: 999;
+  padding: max(1.5vw, 1.5rem);
+  font-family: "Bebas Neue", sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in;
+}
+
+.status-message.visible {
+  transition: all 0.4s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Copyright */
 
 .copyright {
@@ -1989,6 +2016,59 @@ html.popin--opened {
   top: 50%;
   transform: translate(-15%, -20%) scale(0.95);
 }
+
+/* Spinner */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  background-color: #000000;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  display: none;
+}
+
+.preloader.show {
+  display: flex;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media screen and (max-width: 1360px) {
   /* .services__item--main { */
   .service-post-wrapper {

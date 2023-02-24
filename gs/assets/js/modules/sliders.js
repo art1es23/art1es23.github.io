@@ -16,31 +16,8 @@ const _setEffect = (slider) =>
 const _setCountOfSlides = (slider) =>
   window.innerWidth <= 800 ? 1.85 : "auto";
 
-// function actionWithSection(sliderWrapper, sliderInner, sliderSlide, state) {
-//   const slider = document.querySelector(sliderWrapper);
-//   const inner = slider.querySelector(sliderInner);
-//   const slides = slider.querySelectorAll(sliderSlide);
-
-//   switch (state) {
-//     case "add": {
-//       slider.classList.add("swiper");
-//       inner.classList.add("swiper-wrapper");
-//       slides.forEach((slide) => {
-//         slide.classList.add("swiper-slide");
-//       });
-//       break;
-//     }
-//   }
-// }
-
 function initBookReaderSlider() {
   if (window.innerWidth <= 800) {
-    // actionWithSection(
-    //   ".slider-book-reader",
-    //   ".swiper-wrapper",
-    //   ".swiper-slide",
-    //   "add"
-    // );
     createSlider(".slider-book-reader", true, 0, true, 1.85);
   }
 }
@@ -180,12 +157,10 @@ const createSlider = (
       ) {
         swiper.destroy();
         if (window.innerWidth <= 800 && !isResizeBitalo) {
-          console.log("sssss");
           createSlider(".slider-bitalo", true, 0, true, 1.85);
           isResizeBitalo = true;
         }
         if (window.innerWidth > 800 && !isResizeBitalo) {
-          console.log("wwwww");
           initBitaloSlider();
           isResizeBitalo = true;
         }
