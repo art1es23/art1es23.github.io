@@ -49,7 +49,9 @@ export default function t() {
         {
           opacity: 0,
           x:
-            t === ".project--book-reader" || t === ".project--jellywallet"
+            window.innerWidth <= 1080
+              ? 0
+              : t === ".project--book-reader" || t === ".project--jellywallet"
               ? -100
               : 100,
         },
