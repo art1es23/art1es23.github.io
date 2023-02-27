@@ -20,11 +20,11 @@ export default function showNavigationMenu() {
 
   navigationItems.forEach((item) =>
     item.addEventListener("click", (event) => {
-      trigger.classList.toggle("menu-toggle--active");
-      header.classList.toggle("header--active");
-      navigation.classList.toggle("navigation--active");
-      navigationInner.classList.toggle("navigation-menu--active");
-      document.documentElement.classList.toggle("hidden");
+      trigger.classList.remove("menu-toggle--active");
+      header.classList.remove("header--active");
+      navigation.classList.remove("navigation--active");
+      navigationInner.classList.remove("navigation-menu--active");
+      document.documentElement.classList.remove("hidden");
     })
   );
 }
