@@ -535,7 +535,13 @@
     left: 0;
     width: 15%;
     height: 100%;
-    box-shadow: 75px 0 75px -75px rgb(0 0 0) inset;
+    pointer-events: none;
+    /* box-shadow: 75px 0 75px -75px rgb(0 0 0) inset; */
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
     /* display: none; */
   }
   .slider-book-reader:before {
@@ -548,7 +554,13 @@
     width: 15%;
     height: 100%;
     /* inset: 0; */
-    box-shadow: -75px 0 75px -75px rgb(0 0 0) inset;
+    pointer-events: none;
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    /* box-shadow: -75px 0 75px -75px rgb(0 0 0) inset; */
     /* display: none; */
   }
 
@@ -678,7 +690,13 @@
     left: 0;
     width: 15%;
     height: 100%;
-    box-shadow: 75px 0 75px -75px #0a1e49 inset;
+    background: linear-gradient(
+      90deg,
+      rgba(10, 30, 73, 0.5) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    /* box-shadow: 75px 0 75px -75px #0a1e49 inset; */
+    pointer-events: none;
     /* display: none; */
   }
   .slider-bitalo:before {
@@ -691,7 +709,13 @@
     width: 15%;
     height: 100%;
     /* inset: 0; */
-    box-shadow: -75px 0 75px -75px #0a1e49 inset;
+    pointer-events: none;
+    background: linear-gradient(
+      270deg,
+      rgba(10, 30, 73, 0.5) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    /* box-shadow: -75px 0 75px -75px #0a1e49 inset; */
     /* display: none; */
   }
 
@@ -820,7 +844,7 @@
   }
 
   .navigation {
-    top: 6rem;
+    top: 65px;
   }
   /* Logo */
   .logo-icon {

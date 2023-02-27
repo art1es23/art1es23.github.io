@@ -49,12 +49,6 @@ export default function initModalSliders(triggerSliderClassName) {
         },
         spaceBetween: 300,
         pagination: { el: ".swiper-pagination", clickable: true },
-        // on: {
-        //   resize() {
-        //     swiperModal.destroy();
-        //     swiperModal.init();
-        //   },
-        // },
       });
 
       actionWithPopin(slideshowModal, "close", screen);
@@ -86,6 +80,15 @@ export default function initModalSliders(triggerSliderClassName) {
       );
 
       wrapperSlideshowModal.classList.add("project-media-slider-wrapper-modal");
+
+      const prev = clone.querySelector(".swiper-button-prev");
+      const next = clone.querySelector(".swiper-button-next");
+      const pagination = clone.querySelector(".swiper-pagination");
+
+      clone.setAttribute("style", "");
+      prev.setAttribute("style", "");
+      next.setAttribute("style", "");
+      pagination.setAttribute("style", "");
 
       const itemsFromSlideshowModal = Array.from(
         wrapperSlideshowModal.querySelectorAll(".project-media-slider__item")
@@ -124,21 +127,22 @@ export default function initModalSliders(triggerSliderClassName) {
       }
     }
     function closeWrapper(item, modalSlider) {
-      const wrapperSlideshowModal = document.querySelector(
-        ".project-media-slider-wrapper"
+      const wrapperSlideshowModal = item.querySelector(
+        ".slideshow-modal--wrapper"
       );
+
+      // const prev = item.querySelector(".swiper-button-prev");
+      // const next = item.querySelector(".swiper-button-next");
+      // const pagination = item.querySelector(".swiper-pagination");
 
       item.addEventListener("click", (e) => {
         e.preventDefault();
-        let target = e.target;
-
-        const prev = item.querySelector(".swiper-button-prev");
-        const next = item.querySelector(".swiper-button-next");
-        const pagination = item.querySelector(".swiper-pagination");
+        let target = e.currentTarget;
 
         if (target !== item) {
-          if (target === prev || target === next || target === pagination)
-            return;
+          // if (target === prev || target === next || target === pagination)
+          //   return;
+
           item.classList.add("popin--closed");
           document.documentElement.classList.remove("hidden");
 
