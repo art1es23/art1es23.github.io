@@ -55,8 +55,7 @@ export default function submitForm(formID) {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const URL =
-      "https://api.telegram.org/bot6107487606:AAFkxB893l1vzE0PIjIA-lRqWiclu2zNFv8/sendMessage";
+    const URL = "https://api.telegram.org/bot{//}/sendMessage";
 
     const formData = new FormData(event.currentTarget);
 
